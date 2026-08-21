@@ -1,0 +1,33 @@
+# ---------- Restricted data & generated demo data (do NOT commit) ----------
+# Real cohort data (UKB / CHARLS / ADNI ...) — restricted, must not be published
+/Data/*
+!/Data/readme.md
+!/Data/generate_fake_data.py
+# Training / evaluation outputs (including demo runs)
+/artifacts/
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.ipynb_checkpoints/
+
+# ---------- Environments ----------
+.conda/
+.env
+venv/
+env/
+
+# ---------- Logs ----------
+*.log
+logs/
+
+# ---------- Editors / OS ----------
+.vscode/
+.idea/
+.cursor/
+.DS_Store

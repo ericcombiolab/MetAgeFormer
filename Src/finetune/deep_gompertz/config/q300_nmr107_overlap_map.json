@@ -1,0 +1,26 @@
+{
+  "description": "Chemical overlaps between ADNI Q300 LC-MS and UKB NMR 107 non-derived metabolites (AA / organic acids / ketone). Excludes Nightingale total-FA fractions vs Q300 free FA.",
+  "excluded_semantic_mismatch": {
+    "C18:2(cis-9,12)": "LA",
+    "C22:6(cis-4,7,10,13,16,19)": "DHA",
+    "C18:3(cis-9,12,15)": "Omega_3",
+    "C20:5(cis-5,8,11,14,17)": "Omega_3"
+  },
+  "q300_to_nmr": {
+    "L-Alanine": "Ala",
+    "Glycine": "Gly",
+    "L-Histidine": "His",
+    "L-Leucine": "Leu",
+    "L-Valine": "Val",
+    "L-Tyrosine": "Tyr",
+    "Citric acid": "Citrate",
+    "C2:0": "Acetate",
+    "3-Hydroxybutyric acid": "bOHbutyrate"
+  },
+  "unit_conversion": {
+    "q300_stored_unit": "µM",
+    "nmr_unit": "mmol/L",
+    "conversion_factor": 0.001,
+    "note": "µM → mmol/L: divide by 1000 (factor 0.001)"
+  }
+}

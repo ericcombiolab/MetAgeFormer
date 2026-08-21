@@ -1,0 +1,20 @@
+{
+    "lr": 0.0001,
+    "batch_size": 16,
+    "n_epoch": 2,
+    "n_toler": 2,
+    "max_mr": 0.8,
+    "f_gamma": "cosine",
+    "f_loss": "MAE",
+    "attn_mode": "mixdirect_mask",
+    "drop_out": 0.1,
+    "n_heads": 2,
+    "n_blocks": 1,
+    "d_ff": 256,
+    "d_model": 128,
+    "f_act": "relu",
+    "data_path": "../Data/fake/NMR_dataset_fake",
+    "save_dir": "../artifacts/demo/checkpoints/pretrained/nmr",
+    "save_note": "demo",
+    "wandb_monitor": false
+}

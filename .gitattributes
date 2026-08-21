@@ -1,0 +1,2 @@
+# Model checkpoints are tracked with Git LFS (see Model_Weights/readme.md)
+*.pth filter=lfs diff=lfs merge=lfs -text

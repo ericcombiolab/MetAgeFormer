@@ -1,0 +1,24 @@
+# MetAgeFormer — CPU environment (minimal dependency set)
+# Only what is needed to run the released models, demo notebooks, training
+# pipelines, and the fake-data generator. wandb is optional (logging only).
+# Usage: conda env create -f environment_cpu.yml && conda activate metageformer
+name: metageformer
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - pip
+  # Core framework
+  - pytorch=2.3.0
+  - cpuonly
+  # Data handling
+  - numpy<2            # torch 2.3 is incompatible with numpy 2
+  - pandas=2.2.2
+  - anndata>=0.10      # .h5ad data container
+  - pip:
+      - einops==0.8.0        # tensor rearrangement (Src/metageformer_torch/models.py)
+      - tqdm==4.66.4         # progress bars (distillation/ablation training)
+      - torchsurv==0.1.5     # survival metrics (common/training.py)
+      - permetrics==2.0.0    # imputation-eval NRMSE/RMAE (pretrain/eval.py)
