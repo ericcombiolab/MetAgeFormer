@@ -32,11 +32,17 @@ which can run on synthetic data without any access-restricted cohort data.
 
 ## ✨ Key Features
 
+- **AI-agent support**: bilingual per-capability skill guides (`Docs/SKILL_*.md`) plus
+  an agent entry point (`AGENTS.md`) let coding agents (Claude Code, Codex, …)
+  install, verify, and run the whole repository autonomously — including raw-data
+  preprocessing recipes for UKB / CHARLS / ADNI and private cohorts
+- **Bring-your-own-cohort**: published UKB-derived normalization factors
+  (`Data/ukb_norm_factors/`, aggregate statistics only) + `Data/apply_ukb_norm.py`
+  convert your own NMR or blood-test panel into model input
 - **Released weights**: pretrained backbone, DeepGompertz head, and distilled
   lightweight model, downloaded automatically with Git LFS
 - **NaN-aware inference**: mask embedding + key-padding mask for missing measurements
   (no zero-fill)
-- **AnnData-based**: reads `.h5ad` NMR/blood panels with a `Z-score normalized` layer
 - **Full training pipelines**: pretraining, finetuning, distillation, and ablations
   included, each with a demo run on synthetic data (~1 min, CPU)
 - **Demo without restricted data**: `Data/generate_fake_data.py` builds synthetic
@@ -142,6 +148,12 @@ python Data/generate_fake_data.py --from <real.h5ad> --n_samples 1000
 python Data/generate_fake_data.py --synthetic --outdir Data/fake
 ```
 
+For your own cohort, `Data/apply_ukb_norm.py` applies the published UKB-derived
+normalization factors (`Data/ukb_norm_factors/`) to NMR or blood panels. Full
+raw-data preprocessing recipes for UKB / CHARLS / ADNI are in
+[`Docs/SKILL_DATA_PREPROCESSING.md`](Docs/SKILL_DATA_PREPROCESSING.md); private-cohort
+conversion is in [`Docs/SKILL_CUSTOM_COHORT.md`](Docs/SKILL_CUSTOM_COHORT.md).
+
 ## 📁 Project Structure
 
 ```
@@ -156,8 +168,8 @@ python Data/generate_fake_data.py --synthetic --outdir Data/fake
 │   └── utils.py                   # Tokenizer I/O and helpers
 ├── Notebooks/                     # Demo notebooks (embeddings / aging clock / subtypes / lightweight)
 ├── Model_Weights/                 # Released weights (Git LFS; layout in readme.md)
-├── Data/                          # Data layout + fake-data generator
-├── Docs/                          # AI-agent skill guides (setup CN/EN + one skill per capability)
+├── Data/                          # Data layout + fake-data generator + UKB norm factors + apply_ukb_norm.py
+├── Docs/                          # AI-agent skill guides (setup CN/EN + one skill per capability, incl. data preprocessing)
 ├── AGENTS.md                      # Entry point for AI agents
 ├── environment_cpu.yml            # Minimal CPU conda environment
 ├── environment_gpu.yml            # Minimal GPU conda environment (CUDA 12.1)
