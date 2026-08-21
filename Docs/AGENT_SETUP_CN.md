@@ -111,6 +111,8 @@ print('smoke test OK:', tuple(out['embs'].shape))
 - 代谢亚型分型 → `Docs/SKILL_SUBTYPES.md`（Notebook 3）
 - 轻量血液面板模型 → `Docs/SKILL_LIGHTWEIGHT.md`（Notebook 4）
 - 训练管线（pretrain / finetune / distillation / ablation）→ `Docs/SKILL_TRAINING.md`
+- 队列数据预处理（UKB / CHARLS / ADNI → 模型输入）→ `Docs/SKILL_DATA_PREPROCESSING.md`
+- 私有队列 → 模型输入（NMR / 血液，UKB 归一化因子）→ `Docs/SKILL_CUSTOM_COHORT.md`
 
 ## 7. 故障排查
 

@@ -114,6 +114,8 @@ print('smoke test OK:', tuple(out['embs'].shape))
 - Metabolic subtype assignment → `Docs/SKILL_SUBTYPES.md` (Notebook 3)
 - Lightweight blood-panel model → `Docs/SKILL_LIGHTWEIGHT.md` (Notebook 4)
 - Training pipelines (pretrain / finetune / distillation / ablation) → `Docs/SKILL_TRAINING.md`
+- Cohort data preprocessing (UKB / CHARLS / ADNI → model input) → `Docs/SKILL_DATA_PREPROCESSING.md`
+- Private cohort → model input (NMR / blood, UKB normalization factors) → `Docs/SKILL_CUSTOM_COHORT.md`
 
 ## 7. Troubleshooting
 

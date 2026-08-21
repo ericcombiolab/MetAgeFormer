@@ -15,6 +15,8 @@ Per-capability skills (bilingual, English-first; one per model capability):
 | [`Docs/SKILL_SUBTYPES.md`](Docs/SKILL_SUBTYPES.md) | Metabolic subtype / meta-subtype assignment (Notebook 3) |
 | [`Docs/SKILL_LIGHTWEIGHT.md`](Docs/SKILL_LIGHTWEIGHT.md) | Lightweight blood-panel model (Notebook 4) |
 | [`Docs/SKILL_TRAINING.md`](Docs/SKILL_TRAINING.md) | Training pipelines (pretrain / finetune / distillation / ablation, incl. demo commands) |
+| [`Docs/SKILL_DATA_PREPROCESSING.md`](Docs/SKILL_DATA_PREPROCESSING.md) | Cohort data preprocessing: UKB / CHARLS / ADNI raw data → model-input h5ad (requires data access) |
+| [`Docs/SKILL_CUSTOM_COHORT.md`](Docs/SKILL_CUSTOM_COHORT.md) | Private cohort → model input with published UKB normalization factors |
 
 Quick rules:
 

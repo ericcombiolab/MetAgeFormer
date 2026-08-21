@@ -10,6 +10,11 @@ Data/
 │   └── val.h5ad                                   #   layer "Z-score normalized", obs age column
 ├── Blood_dataset_fullcohort_107nonderived_mlm/    # UKB blood biochemistry panel (notebook 4)
 │   └── val.h5ad
+├── ukb_norm_factors/                              # published UKB-derived normalization factors
+│   ├── nmr107_factors.csv                         #   107 NMR features (vocab order): mean/std/unit
+│   ├── blood14_factors.csv                        #   14 blood features (Lightweight panel)
+│   └── readme.md                                  #   provenance & conventions (aggregate stats only)
+├── apply_ukb_norm.py                              # z-score a private cohort with the factors
 └── fake/                                          # synthetic demo data (git-ignored)
 ```
 
@@ -41,3 +46,21 @@ training stage has a demo command that finishes in ~1 minute on CPU.
 Then point the notebook `DATA_PATH` at `Data/fake/NMR_dataset_fake/val.h5ad`
 (a commented line is provided in each notebook). Dependencies: `numpy`, `pandas`,
 `anndata` only.
+
+## Custom cohort → model input
+
+For your own cohort (NMR metabolomics or blood-test panel), apply the published
+UKB-derived normalization factors with `apply_ukb_norm.py` (see
+`Docs/SKILL_CUSTOM_COHORT.md` for units, matching rules, and verification):
+
+```bash
+# NMR 107 panel → z-scored matrix (features as rows in the input CSV)
+python Data/apply_ukb_norm.py --input /your/cohort.csv --mode nmr107 --out my_cohort_z.csv
+
+# or rebuild an .h5ad into canonical model-input format (never modifies the input)
+python Data/apply_ukb_norm.py --mode blood14 \
+    --h5ad /your/cohort.h5ad --h5ad-out my_cohort_z.h5ad
+```
+
+Raw-data pipelines for the restricted cohorts (UKB / CHARLS / ADNI) are documented in
+`Docs/SKILL_DATA_PREPROCESSING.md` (requires your own data access).
