@@ -3,6 +3,8 @@
 /Data/*
 !/Data/readme.md
 !/Data/generate_fake_data.py
+!/Data/apply_ukb_norm.py
+!/Data/ukb_norm_factors/
 # Training / evaluation outputs (including demo runs)
 /artifacts/
 
